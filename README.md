@@ -35,7 +35,7 @@ Start the server
 ```
 
 ## API Reference
-
+### PRODUCTS
 #### Add a Product
 
 ```http
@@ -104,6 +104,61 @@ Here we are passing word as a quary to search based on product name, description
 
 ```http
   DELETE http://localhost:3000/api/product/${productId}
+```
+```sh
+    #example
+    http://localhost:3000/api/product/65a18aa7702909c47b63c106
+```
+Here we are passing productId as a params to delete a specified Product.
+
+### VARIANTS
+
+#### Add a Variant
+
+```http
+    POST http://localhost:3000/api/variants/${productID}
+```
+```sh
+    #body example
+    {
+        "name":"iphone 14 pro",
+        "additional_cost" : 20000
+    }
+```
+Here we are making a post request for adding a variant to a specific product.
+
+
+#### Get a Variant By ID
+
+```http
+    GET http://localhost:3000/api/variants/${productId}
+```
+
+```sh 
+#example
+    GET http://localhost:3000/api/variants/65a11efbe84a81f851260287
+```
+Here we are passing productId as a params to get a specified variants of a product.
+
+
+#### Update a Variant
+
+```http
+    PATCH http://localhost:3000/api/variants/${variantID}
+```
+```sh
+    #body example
+    {
+        "name":"OnePlus 12s",
+        "additional_cost":5000
+    }
+```
+Here we are making a patch request for updating a variant of a specific product.
+
+#### Delete a Variant
+
+```http
+  DELETE http://localhost:3000/api/product/${variantID}
 ```
 ```sh
     #example

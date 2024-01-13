@@ -73,8 +73,8 @@ module.exports.getVariantById = async (req, res) => {
 
 module.exports.deleteVariantById = async (req, res) => {
     try {
-        const prodId = req.params.productId;
-        const item = await Variants.findByIdAndDelete(prodId);
+        const variantId = req.params.variantId;
+        const item = await Variants.findByIdAndDelete(variantId);
 
         if (!item) {
             return res.status(400).send("variants not found..")
